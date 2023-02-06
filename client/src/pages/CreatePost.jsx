@@ -21,7 +21,7 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch('http://localhost:8080/api/v1/dallE', {
+        const response = await fetch('https://ai-image-generator-yl93.onrender.com/api/v1/dallE', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -48,7 +48,7 @@ const CreatePost = () => {
       setLoading(true);
 
       try {
-        const response = await fetch('http://localhost:8080/api/v1/post', {
+        const response = await fetch('https://ai-image-generator-yl93.onrender.com/api/v1/post', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -79,15 +79,18 @@ const CreatePost = () => {
   return (
     <section className='max-w-7xl mx-auto'>
       <div>
-        <h1 className='font-extrabold text-[#222328] text-[32px]'>
+        <h1 className='font-extrabold text-[32px]'>
+          {/*  text-[#222328] */}
           Create
         </h1>
-        <p className='mt-2 text-[#666e75] text-[16px] max-w-[500px]'>
-          Create imaginative and visually stunning image through DALL-E AI and share it with the community
+        <p className='mt-2 text-[16px]'>
+          {/* text-[#666e75] */}
+          Create imaginative and visually stunning image through AI and share it with the community
         </p>
       </div>
 
-      <form className='mt-16 max-w-3xl' onSubmit={handleSubmit}>
+      <form className='mt-16' onSubmit={handleSubmit}>
+        {/*  max-w-3xl */}
         <div className='flex flex-col gap-5'>
           <FormField
             labelName="Your name"
@@ -101,14 +104,14 @@ const CreatePost = () => {
             labelName="Prompt"
             type="text"
             name="prompt"
-            placeholder="A realistic photograph of a young woman with blue eyes and blonde hair"
+            placeholder="Ex: A realistic photograph of a young woman with blue eyes and blonde hair"
             value={form.prompt}
             handleChange={handleChange}
             isSurpriseMe
             handleSurpriseMe={handleSurpriseMe}
           />
 
-          <div className='relative bg-gray-50 border border-gray-300 text-gray-900 text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center'>
+          <div className='relative bg-gray-50 border border-gray-300 text-gray-900 text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 w-48 p-3 h-48 flex justify-center items-center'>
             {form.photo ? (
               <img
                 src={form.photo}
@@ -140,7 +143,8 @@ const CreatePost = () => {
           </button>
         </div>
         <div className='mt-10'>
-          <p className='mt-2 text-[#666375] text-[12px]'>
+          <p className='mt-2 text-[12px]'>
+            {/* text-[#666375] */}
             ** Once you have created the image you want, you can share it with others in the community **
           </p>
           <button

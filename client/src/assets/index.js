@@ -1,9 +1,15 @@
 import download from './download.png';
-import logo from './logo.svg';
 import preview from './preview.png';
+import openAI from './openAI.png';
+import logo from './ai_image-generator_logo.png';
+import createLight from './create-light.png';
+import createDark from './create-dark.png';
 
 export {
   download,
-  logo,
   preview,
+  openAI,
+  logo,
+  createLight,
+  createDark
 };
